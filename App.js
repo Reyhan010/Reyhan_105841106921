@@ -24,7 +24,7 @@ const App = () =>{
                 </View>
                 <View style={{
                     flex:1,
-                    backgroundColor:'yellow'
+                    backgroundColor:'yellow '
                 }}>
                     
                 </View>
