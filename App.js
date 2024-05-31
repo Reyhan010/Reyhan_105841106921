@@ -1,3 +1,4 @@
+//Tugas 1
 // import { StyleSheet, Text, View } from "react-native";
 // import React from "react";
 
@@ -36,7 +37,10 @@
 //     </view>
 //   )
 // }
-// TUGAS 3
+// export default App;
+
+
+// // TUGAS 3
 import { StyleSheet,Text,View,Image } from "react-native";
 import React from "react";
 import { isWhiteSpaceLike } from "typescript";
