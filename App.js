@@ -3,32 +3,10 @@
 import { StyleSheet,Text,View,Image } from "react-native";
 import React from "react";
 import { isWhiteSpaceLike } from "typescript";
+import ButtonCostum from "./components/button/button";
 
 const App = () =>{
-    const ButtonCostum = ({ color, text }) => {
-        return (
-            <View style={{
-                backgroundColor: color,
-                width:160,
-                height:50,
-                justifyContent:'center',
-                marginLeft:10,
-                borderRadius:20,
-            }}>
-                <Text style={{
-                     fontFamily:'Times New Roman,Times,serif',
-                    fontSize:15,
-                    color:'white',
-                    textAlign:'center',
-                    fortWeight: 'bold',
-
-                }}>{text}
-                    
-                </Text>
-            </View>
-
-        )
-    }
+    
     return (
     //    #< style={{backgroundColor:'blue',height:'100%'}}>
         <View style={{flex: 1,backgroundColor:'black'}}>
