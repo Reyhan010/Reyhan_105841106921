@@ -1,164 +1,224 @@
-
-// TUGAS 3
+// Sign Up
 // import { StyleSheet,Text,View,Image,TextInput } from "react-native";
 // import React from "react";
-// import { isWhiteSpaceLike } from "typescript";
-// import ButtonCostum from "./components/button/button";
+// const TextInputCustom = ({name,color,Password}) =>{
+//     return(
+//         <View style={{
+//             justifyContent:'center',
+//             alignItems:'center'
 
-// const App = () =>{
-    
-//     return (
-//     //    #< style={{backgroundColor:'blue',height:'100%'}}>
-//         <View style={{flex: 1,backgroundColor:'black'}}>
-//         <Text style={styles.topText}>
-//                 Welcome to my
+//         }}>
+//             <TextInput
+//             placeholder={'Masukkan ${name}'}
+//             style={{
+//                 height:45,
+//                 borderColor:'black',
+//                 borderWidth:1,
+//                 borderRadius:10,
+//                 marginBottom:10,
+//                 paddingLeft:10,
+//                 width:300,
+//                 color:color
+//             }}
+//             />
+//         </View>
+//     )
+// }
+// const ButtonCostum =({color,text}) =>{
+//     return(
+//         <View style={{backgroundColor:color,
+//             width:160,
+//             height:45,
+//             alignItems:'center',
+//             justifyContent:'center',
+//             textAlign:'center',
+//             borderRadius:10,
+//             width:300,
+//         }}>
+//             <Text style={{color:'white',fontSize:20}}>
+//                 {text}
 //             </Text>
-//             <Text style={styles.topTextt}>
-//                 Cafe
-//                 </Text>
-//             <View style={{flex:1,justifyContent:'center',alignItems:'center',marginTop:50}}>
-//                <Image source={{ uri:'koko1.png'}}
-//                style={styles.image}>
-//                </Image>
-//             </View>
-//             <View style={{flex:1,alignItems:'center',justifyContent:'center',marginBottom:10}}>
-//                 <View style={{flexDirection:'row',marginBottom:10}}>
-//                     <ButtonCostum color='violet' text='Login'/>
-//                     <ButtonCostum color='red' text='SingOut'/>
-                
+//         </View>
+//     );
+// };
+// const App =() =>{
+    
+//     return(
+//         <View style={style.container}>
+//             <Text style={style.topText}>
+//                 Sign Up
+//             </Text>
+//             <View style={{
+//                 flex:1,
+//                 justifyContent:'center',
+//                 alignItems:'center',
+//             }}>
+//                 <TextInputCustom name="Username" color="black"/>
+//                 <TextInputCustom name="Email" color="black"/>
+//                 <TextInputCustom name="Password" color="black"/>
+//                 <ButtonCostum color='violet' text="SignUp"/>
+//                 <View style={style.container}>
+//                     <Text style={style.topText1}>
+//                         or Sign Up with social account
+//                     </Text>
+//                     <View style={{
+//                         flex:1,
+//                         justifyContent:'center',
+//                         alignItems:'center',
+//                         marginTop:75,
+//                         flexDirection:'row',
+//                     }}>
+//                         <Image source={{uri:'goggle.png'}} style={styles.image}/>
+//                         <Image source={{uri:'facebook.png'}} style={styles.image}/>
 //                     </View>
 //                 </View>
 //             </View>
+//         </View>
+//     )
+// }
 
-        
-        
-        
-//     );
-// };
-
-
-// const styles= StyleSheet.create({
-//     topText:{
-//         color:'indigo',
-//         fontFamily:'Times New Roman,Times,serif',
-//         fontSize:45,
-//         fontWeight:'bold',
-//         textAlign:'center',
-//         marginTop:75,
+// const style = StyleSheet.create({
+//     container:{
+//         flex:1,
+//         backgroundColor:'thistle',
+//         padding:70,
 //     },
-//     topTextt:{
-//         color:'indigo',
-//         fontFamily:'Times New Roman,Times,serif',
-//         fontSize:45,
-//         fontWeight:'bold',
+//     topText:{
+//         fontSize:50,
 //         textAlign:'center',
-//         marginTop:0,
-
+//         marginRight:130,
+//         marginBottom:120,
+//         fontWeight:'bold',
+//     },
+//     topText1:{
+//         fontSize:20,
+//         textAlign:'center',
 //     },
 //     image:{
-//         width:300,
-//         height:200,
-//         borderRadius: 50
-//     },
-
-// });
-
-// export default App;
-
-
-
-
-//TUGAS 2
-
-// import { StyleSheet, Text, View } from "react-native";
-// import React from "react";
-
-// const App = () => {
-//   return (
-//     <View style={{ flex: 1, backgroundColor:'black'}}>
-//       <View style={{ flexDirection: "row", 
-//       flex: 1,
-//       alignItems: "flex-end", //baris
-//       justifyContent: "center", //kolom
-//       marginLeft: 8, //jarak dari kiri
-//       marginRight: 8, //jarak dari kanan
-//       marginBottom: 40, //jarak dari bawah
-//     }}>
-//       <View style={{
-//         backgroundColor: "red", width: 180, height: 80,
-//         justifyContent: "center",
-//         borderRadius: 50,
-        
-//       }}>
-//         <Text style={{
-//           fontSize: 30, color: "white",
-//           textAlign: "center",
-//           fontWeight: "bold",
-//         }}>
-//           Login
-//         </Text>
-//       </View>
-//       <View style={{
-//         backgroundColor: "blue", width: 180, height: 80,
-//         justifyContent: "center",
-//         borderRadius: 10,
-//         marginLeft: 8,
+//         width:50,
+//         height:50,
 //         borderRadius:50,
-//       }}>
-//          <Text style={{
-//           fontSize: 30, color: "white",
-//           textAlign: "center",
-//           fontWeight: "bold",
-//         }}>
-//           Register
-//         </Text>
-//       </View>
-//     </View>
-//   </View>
-//       )
+//         marginBottom:10,
+//         marginHorizontal:10
 //     }
+// })
+// export default App
 
-// export default App;
+//forgetPasword
+// 
 
+//login
 import { StyleSheet,Text,View,Image,TextInput } from "react-native";
 import React from "react";
-import { isWhiteSpaceLike } from "typescript";
-import ButtonCostum from "./components/button/button";
-
-const App = () =>{
-    const TextInputCostum = ({name, color}) =>{
-        return(
-<TextInput
-        placeholder={`Masukkan ${name}`}
-        style={{
-            height: 50,
-            width:400,
-            borderBlockColor:'gray',
-            borderWidth:1,
+const TextInput = ({name,color,Password}) =>{
+    return (
+        <View style={{
+            justifyContent:'center',
+            alignItems:'center',
+        }}>
+            <TextInput
+            placeholder={'Masukkan${name}'}
+            style={{
+                height:45,
+                borderColor:'black',
+                borderWidht:1,
+                borderRadius:10,
+                marginBottom:10,
+                paddingLeft:10,
+                width:300,
+                color:color,
+                
+            }}
+            />
+        </View>
+    )
+}
+const ButtonCostum = ({color,text}) =>{
+    return(
+        <View style={{
+            backgroundColor:color,
+            width:160,
+            height:45,
+            alignItems:'center',
+            justifyContent:'center',
+            textAlign:'center',
             borderRadius:10,
-            paddingLeft:10,
-            color:color,
-            borderWidth:1,
-            margin:10,
-            
-        }} 
-        
-        />
-        )
-    }
-
- return (
-    <View style={{
-        flex: 1,
-        justifyContent:'center',
-        alignItems:'center',
-    }}>
-        <TextInputCostum name = "nama" color = 'black'></TextInputCostum>
-        <TextInputCostum name = "Email"color = 'black'></TextInputCostum>
-        <TextInputCostum name = "password"color = 'black'></TextInputCostum>
+            width:300,
+            marginTop:15
+        }}>
+            <Text style={{color:'black',fontSize:20}}>
+                {text}
+            </Text>
+        </View>
+    );
+};
+const App =()=>{
+    return(
+    <View style={style.container}>
+        <Text style={styles.topText}>
+            Login
+        </Text>
+        <View style={{
+            flex:1,
+            justifyContent:'center',
+            alignItems:'center',
+        }}>
+            <TextInputCustom name="Email" color="black"/>
+            <TextInputCustom name="Password" color="black"/>
+            <ButtonCostum color='blue'text="Login"/>
+            <Text style={styles.ForgetPasswordText}>
+                Forget Password 
+            </Text>
+            <View View style={styles.container}>
+                <Text style={styles.topText1}>
+                    or sign up with social account
+                </Text>
+                <View style={{
+                    flex:1,
+                    justifyContent:'center',
+                    alignItems:'center',
+                    marginTop:75,
+                    flexDirection:'row'
+                }}>
+                    <Image source={{uri:'goggle.png'}} style={style.Image}/>
+                    <Image source={{uri:'facebook.png'}} style={style.Image}/>
+                </View>
+            </View>
+        </View>
     </View>
- )
+    )
 }
 
+const style = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'blue',
+        padding:70,
+        
+    },
+    topText:{
+        fontSize:50,
+        textAlign:'center',
+        marginRight:150,
+        marginBottom:100,
+        fontWeight:'bold',
+    },
+    topText1:{
+        fontSize:20,
+        textAlign:'center',
+        marginTop:20,
+    },
+    ForgetPasswordText:{
+        fontSize:15,
+        textAlign:'center',
+        color:'yellow',
+        marginBottom:40,
+    },
+    image:{
+        width:50,
+        height:50,
+        borderRadius:50,
+        marginHorizontal:5,
+    }
+})
 export default App
-
