@@ -1,26 +1,84 @@
-import {useFonts} from 'expo-font';
-import {Text, View} from 'react-native';
+import * as React from 'react';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginPage from './components/Login';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeAktif from './assets/icons/homeAktif.jpg';
+import HomeNonAktif from './assets/icons/homeInaktif.jpg';
+import ShopAktif from './assets/icons/shopAktif.jpg';
+import ShopNonAktif from './assets/icons/shopInaktif.jpg';
 
-export default function App(){
-    const [fontsLoaded] = useFonts({
-        'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
-        'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
-        'MetroLight': require('./assets/fonts/Metropolis-light.otf'),
-        'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
-        'MetroSemibold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+const Tab = createBottomTabNavigator();
+function HomeScreen({navigation}){
+  
+      return (
+        <View style={{
+          flex:1,
+          alignItems:'center',
+          justifyContent:'center',
+        }}>
+          <Text style={{
+            fontSize:16,
+            padding:15,
+            fontFamily:'Metro-Black',
+          }}>Home Screen</Text>
+      
+          <TouchableOpacity
+          style={{
+            padding:10,
+            marginBottom:10,
+            borderRadius:5,
+            alignItems:'center',
 
-    });
-    if(!dapatFont){
-        return<Text>Font tidak ditemukan </Text>
-    }
-    return(
-        <View style={{Flex:1, justifyContent:'center',alignItems:'center'}}>
-            <Text style={{fontFamily:'MetroBlack', fontSize:24,}}>Font Metropolis Black</Text>
-            <Text style={{fontFamily:'MetroBold', fontSize:24,}}>Font Metropolis Bold</Text>
-            <Text style={{fontFamily:'MetroLight', fontSize:24,}}>Font Metropolis light</Text>
-            <Text style={{fontFamily:'MetroMedium', fontSize:24,}}>Font Metropolis Medium</Text>
-            <Text style={{fontFamily:'MetroSemibold', fontSize:24,}}>Font Metropolis SemiBold</Text>
-            <Text>Font Biasa</Text>
+          }} 
+          onPress={() => navigation.navigate('Login')}>
+            <Text style={{
+              color:'blue',
+              fontFamily:'Metro-Bold',
+              fontSize:20,
+              letterSpacing:1
+            }}>LOGIN</Text>
+          </TouchableOpacity>
         </View>
-    )
+      )
+      }
+
+function MyTabs(){
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen}
+      options={{
+        headerShown:false, tabBarIcon:({focused}) => (
+        <Image source={focused ? HomeAktif : HomeNonAktif} style={{width:30, height:30}} />
+      )
+    }}
+    />
+
+<Tab.Screen name="Login" component={LoginPage}
+      options={{
+        headerShown:false, tabBarIcon:({focused}) => (
+        <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
+      )
+    }}
+    />
+
+    
+    </Tab.Navigator>
+  )
 }
+
+
+const Stack = createNativeStackNavigator();
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={MyTabs} />
+        <Stack.Screen name="Login" component={LoginPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
+export default App

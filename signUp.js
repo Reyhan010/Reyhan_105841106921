@@ -101,4 +101,4 @@ const style = StyleSheet.create({
         marginHorizontal:10
     }
 })
-export default App
+export default signUp;
