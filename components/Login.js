@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image } from "react-native";
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 const TextInputCustom = ({ name, color, }) => {
@@ -42,7 +42,7 @@ const ButtonCostum = ({ color, text }) => {
 };
 
 
-const Login = () => {
+const Login = ({navigation}) => {
 
     return (
         <View style={{
@@ -96,7 +96,20 @@ const Login = () => {
                 width: '100%',
                 fontFamily: 'MetroBlack'
             }}>
-                <ButtonCostum color='blue' text='LOGIN' />
+                <TouchableOpacity onPress={() => navigation.navigate('MyTabs')} style={{
+                    backgroundColor: 'red',
+                    width: '90%',
+                    height: 45,
+                    justifyContent: 'center',
+                    borderRadius: 20,
+                    alignItems: 'center',
+                }}>
+                    <Text style={{
+                        color: 'white',
+                        fontSize: 16,
+                        fontWeight:'bold'
+                    }}>LOGIN</Text>
+                </TouchableOpacity>
             </View>
 
             <View style={{

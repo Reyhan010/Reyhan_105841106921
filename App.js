@@ -4,78 +4,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginPage from './components/Login';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeAktif from './assets/icons/homeAktif.jpg';
-import HomeNonAktif from './assets/icons/homeInaktif.jpg';
-import ShopAktif from './assets/icons/shopAktif.jpg';
-import ShopNonAktif from './assets/icons/shopInaktif.jpg';
-
-const Tab = createBottomTabNavigator();
-function HomeScreen({navigation}){
-  
-      return (
-        <View style={{
-          flex:1,
-          alignItems:'center',
-          justifyContent:'center',
-        }}>
-          <Text style={{
-            fontSize:16,
-            padding:15,
-            fontFamily:'Metro-Black',
-          }}>Home Screen</Text>
-      
-          <TouchableOpacity
-          style={{
-            padding:10,
-            marginBottom:10,
-            borderRadius:5,
-            alignItems:'center',
-
-          }} 
-          onPress={() => navigation.navigate('Login')}>
-            <Text style={{
-              color:'blue',
-              fontFamily:'Metro-Bold',
-              fontSize:20,
-              letterSpacing:1
-            }}>LOGIN</Text>
-          </TouchableOpacity>
-        </View>
-      )
-      }
-
-function MyTabs(){
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen}
-      options={{
-        headerShown:false, tabBarIcon:({focused}) => (
-        <Image source={focused ? HomeAktif : HomeNonAktif} style={{width:30, height:30}} />
-      )
-    }}
-    />
-
-<Tab.Screen name="Login" component={LoginPage}
-      options={{
-        headerShown:false, tabBarIcon:({focused}) => (
-        <Image source={focused ? ShopAktif : ShopNonAktif} style={{width:30, height:30}} />
-      )
-    }}
-    />
-
-    
-    </Tab.Navigator>
-  )
-}
+import MyTabs from './MyTabs';
+import ProfileStackScreen from './Profile';
+import HomeScreen from './HomeScreen';
 
 
 const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={MyTabs} />
+      <Stack.Navigator initialRouteName='LoginPage'>
         <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="MyTabs" component={MyTabs} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="Profile" component={ProfileStackScreen} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   )
