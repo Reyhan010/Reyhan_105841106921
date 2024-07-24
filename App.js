@@ -1,27 +1,42 @@
-import * as React from 'react';
-import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginPage from './components/Login';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MyTabs from './MyTabs';
-import ProfileStackScreen from './Profile';
-import HomeScreen from './HomeScreen';
-
-
-const Stack = createNativeStackNavigator();
-function App() {
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native'
+import React, { useState } from 'react'
+const App = () => {
+  const [formLogin, setForm] = useState({
+    email: '',
+    password: ''
+  })
+  const onSubmit = () => {
+    if (formLogin.email === 'koko' && formLogin.password === '123') {
+      alert('Login Berhasil')
+    }else{
+      alert('Login Gagal')
+    }
+  }
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='LoginPage'>
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="MyTabs" component={MyTabs} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={ProfileStackScreen} />
-        
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Form Login</Text>
+      <View>
+        <Text>Email</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(hasil) => setForm({ ...formLogin, email: hasil })}
+          value={formLogin.email}
+        />
+        <Text>Password</Text>
+        <TextInput
+          style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+          onChangeText={(text) => setForm({ ...formLogin, password: text })}
+          value={formLogin.password}
+        />
+        <View style={{ marginTop: 10 }}>
+          <Button title="Login" onPress={onSubmit} />
+        </View>
+        <View>
+          <Text>Email: {formLogin.email}</Text>
+          <Text>Password: {formLogin.password}</Text>
+        </View>
+      </View>
+    </View>
   )
 }
-
 export default App
